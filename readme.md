@@ -7,7 +7,7 @@ MySQL driver for Laravel Monolog.
 - [Packagist](https://packagist.org/packages/markhilton/monolog-mysql)
 - [GitHub](https://github.com/markhilton/monolog-mysql)
 
-To get the lastest version of Theme simply require it in your `composer.json` file.
+To get the lastest version of this package simply require it in your `composer.json` file.
 
 ~~~
 "markhilton/monolog-mysql": "dev-master"
@@ -15,22 +15,22 @@ To get the lastest version of Theme simply require it in your `composer.json` fi
 
 You'll then need to run `composer install` to download it and have the autoloader updated.
 
-Open up `config/app.php` and find the `providers` key.
+Update your `config/app.php` file `providers` array to include the package service provider:
 
 ~~~
 'providers' => array(
     // ...
-    'Logger\Laravel\Provider\MonologMysqlHandlerServiceProvider'
+    Logger\Laravel\Provider\MonologMysqlHandlerServiceProvider::class,
 );
 ~~~
 
-Publish config using artisan CLI.
+Publish config using artisan CLI:
 
 ~~~
-php artisan config:publish markhilton/monolog-mysql
+php artisan vendor:publish --provider="Logger\Laravel\Provider\MonologMysqlHandlerServiceProvider"
 ~~~
 
-Migrate tables.
+Migrate tables:
 
 ~~~
 php artisan migrate
