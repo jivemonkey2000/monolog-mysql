@@ -24,7 +24,7 @@ class CreateLogsTable extends Migration
             $table->text('message');
             $table->text('context');
 
-            $table->integer('remote_addr')->nullable();
+            $table->string('remote_addr')->nullable();
             $table->string('user_agent')->nullable();
             $table->string('session_id')->nullable();
             $table->integer('created_by')->index()->nullable();
