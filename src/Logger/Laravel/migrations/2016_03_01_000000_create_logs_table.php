@@ -23,6 +23,7 @@ class CreateLogsTable extends Migration
             $table->string('level_name', 100);
             $table->text('message');
             $table->text('context');
+            $table->text('formatted');
 
             $table->string('remote_addr')->nullable();
             $table->string('user_agent')->nullable();
