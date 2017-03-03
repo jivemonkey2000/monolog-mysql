@@ -56,7 +56,7 @@ class MysqlHandler extends AbstractProcessingHandler
             return null;
         }
 
-        return Auth::getAuthIdentifier();
+        return Auth::user()->getAuthIdentifier();
     }
 
 }
